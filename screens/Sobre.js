@@ -10,12 +10,18 @@ export default function Sobre({ navigation }) {
       <Text style={globalStyles.text}>Bem-vindo à página Sobre!</Text>
 
       <TouchableOpacity
-        style={globalStyles.buttonContainer}
-        onPress={() => navigation.navigate('Inicio')}
-      >
-        <Icon name="arrow-back" size={24} color="#068BFF" />
+       style={globalStyles.buttonContainer}
+       onPress={() =>
+        navigation.reset({
+         index: 0,
+         routes: [{ name: 'Inicio' }],
+    })
+  }
+>
+         <Icon name="arrow-back" size={24} color="#068BFF" />
         <Text style={globalStyles.buttonText}>Voltar para Início</Text>
       </TouchableOpacity>
+
     </View>
   );
 }

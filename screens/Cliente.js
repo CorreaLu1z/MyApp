@@ -10,9 +10,14 @@ export default function Cliente({ navigation }) {
       <Text style={globalStyles.text}>Área destinada ao cliente.</Text>
 
       <TouchableOpacity
-        style={globalStyles.buttonContainer}
-        onPress={() => navigation.navigate('Inicio')}
-      >
+         style={globalStyles.buttonContainer}
+         onPress={() =>
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Inicio' }],
+       })
+    }
+>
         <Icon name="arrow-back" size={24} color="#068BFF" />
         <Text style={globalStyles.buttonText}>Voltar para Início</Text>
       </TouchableOpacity>
